@@ -1,0 +1,51 @@
+Kavya Devarapally z1778592
+
+
+Viz: Hourly Usage of Divvy
+
+Steps followed using Python and Tableau:
+
+1. Merged all the data for 2013 and 2014 years for all the quarters into 3 different files(2 files for 2014 year and 1 file for 2013).
+2. Created a time dictionary with keys as hours(0 to 23).
+3. Using split function,stored the hours into an array.
+4. Intialized a count variable to count the no. of rides.
+5. If the start and stop times are in the same hour, increment the count for that particular hour(eg: start time: 12:01 and stop_time: 12:45,increment the count for 12th hour in dictionary).
+6. If the start and stop times are different, increment the count for all the hours in between the starttime and stoptime including the stoptime.
+7. Converted the time dict to a dataframe using pandas.
+8. The dataframe was written to a csv file.
+9. Repeat the steps from 2 to 8 for 3 merged files.
+10. Now, we got 3 files having the hours usage count. Moved all the data into 1 file and using formulas in Excel added the count values for 2014 year's data  
+11. Using that CSV file, plot the graph in tableau.
+12. In Tableau, the csv file was loaded intially.
+13. Hours data was dropped to columns and 2013 and 2014 count for no. of trips as dragged to rows.
+14. Count values for both the years were moved to color so that we can differentiate the count for the no. of trips for the years 2013 and 2014.
+
+
+
+Steps followed using only Tableau:
+1. Merged all the data for 2014 and 2013 years(Trips data) using Union operation in Tableau.
+2. Changed the data type of start time to Date.
+3. Drag the Year's data to column and count of trip_id  data to rows.
+4. Changed the Year type as Hours.
+5. Drag the usertype into color to generate the visualization for Customers and Subscribers.
+
+
+
+Challenges:
+
+1. Due to dual axis issue using Python, need to recreate the entire viz using only tableau. (Dual axis issue - two different axis for 2013 and 2014's no. of rides. As its not suggestable to compare the no. of rides in 2 different axis, recreated the viz using tableau). Using Tableau, the visualization was not informative. To overcome we again used the image generated from python removing dual axis.
+2. Due to huge data set, merging the data was difficult. To overcome, splitted the 4 files into 2 files and repeated the steps while using python.
+
+  
+
+Viz : Usage over Time
+
+
+Steps followed in Tableau:
+
+1. Merged all the data files in Tableau using Union Operation.
+2. Changed the data type of start time to Date.
+3. Created a groupby function on Usertype(Customer and Subscriber).
+4. Drag the starttime to Columns and No. of records to rows.
+5. Change the Starttime view to day.
+6. Added the appropriate colors to Customer and Subscriber.
